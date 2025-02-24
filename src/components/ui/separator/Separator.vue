@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/shadcnComponentUtil'
 import { Separator, type SeparatorProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<
-  SeparatorProps & { class?: HTMLAttributes['class'], label?: string }
->()
+const props = defineProps<SeparatorProps & { class?: HTMLAttributes['class']; label?: string }>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -33,6 +31,7 @@ const delegatedProps = computed(() => {
           props.orientation === 'vertical' ? 'w-[1px] px-1 py-2' : 'h-[1px] py-1 px-2',
         )
       "
-    >{{ props.label }}</span>
+      >{{ props.label }}</span
+    >
   </Separator>
 </template>

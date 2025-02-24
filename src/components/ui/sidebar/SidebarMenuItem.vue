@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/shadcnComponentUtil'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
@@ -8,10 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <li
-    data-sidebar="menu-item"
-    :class="cn('group/menu-item relative', props.class)"
-  >
+  <li data-sidebar="menu-item" :class="cn('group/menu-item relative', props.class)">
     <slot />
   </li>
 </template>
